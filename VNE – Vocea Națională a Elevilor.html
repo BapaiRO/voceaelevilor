@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VNE – Vocea Națională a Elevilor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--card:#fff;--text:#14141a;--muted:#5d5d68;--line:#e8e3da;--acc:#c6f135;--acc-ink:#14141a;--ink:#101015;--coral:#ff6a4d;--sky:#7aa8ff;--violet:#a98bff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0c10;--card:#17171e;--text:#f4f2ee;--muted:#a3a3b0;--line:#272730}}
+:root[data-theme="dark"]{--bg:#0c0c10;--card:#17171e;--text:#f4f2ee;--muted:#a3a3b0;--line:#272730}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 17px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:"Bricolage Grotesque",Inter,system-ui,sans-serif;line-height:1.05;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;font-size:1rem;font-family:inherit}
+.btn:hover{transform:translateY(-3px)}
+.btn-main{background:var(--acc);color:var(--acc-ink);box-shadow:0 6px 0 rgba(0,0,0,.85)}
+.btn-main:hover{box-shadow:0 9px 0 rgba(0,0,0,.85)}
+.btn-ghost{border-color:var(--text);color:var(--text)}
+.btn-ghost:hover{background:var(--text);color:var(--bg)}
+/* nav */
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:2rem;text-decoration:none}
+.logo i{width:40px;height:34px;background:var(--acc);border-radius:14px 14px 14px 4px;display:grid;place-items:center;font-style:normal;font-size:1.1rem;color:#14141a;transform:rotate(-6deg);transition:transform .3s}
+.logo:hover i{transform:rotate(6deg) scale(1.08)}
+nav{display:flex;align-items:center;gap:26px;font-weight:500}
+nav a.l{text-decoration:none;color:var(--muted)}
+nav a.l:hover{color:var(--text)}
+.btn-sm{padding:10px 20px}
+@media(max-width:760px){nav a.l{display:none}}
+/* hero */
+.hero{padding:70px 0 90px;position:relative}
+.tag{display:inline-block;background:var(--card);border:1px solid var(--line);padding:7px 16px;border-radius:999px;font-size:.9rem;font-weight:500;margin-bottom:24px}
+.tag b{color:var(--coral)}
+h1{font-size:clamp(2.7rem,8vw,5.8rem);font-weight:800;max-width:11ch}
+h1 mark{background:var(--acc);color:#14141a;padding:0 .14em;border-radius:.2em;display:inline-block;transform:rotate(-1.5deg)}
+.hero p.lead{font-size:1.25rem;max-width:34ch;color:var(--muted);margin:26px 0 34px}
+.cta{display:flex;flex-wrap:wrap;gap:16px}
+.chips{position:absolute;right:0;top:50px;width:380px;height:420px;pointer-events:none}
+.chip{position:absolute;padding:14px 20px;border-radius:22px 22px 22px 6px;font-weight:600;font-size:.95rem;box-shadow:0 10px 30px rgba(0,0,0,.12);animation:float 6s ease-in-out infinite;color:#14141a}
+.chip:nth-child(1){background:var(--acc);top:0;right:60px}
+.chip:nth-child(2){background:var(--violet);top:120px;right:200px;animation-delay:-2s}
+.chip:nth-child(3){background:var(--coral);top:240px;right:30px;animation-delay:-4s;border-radius:22px 22px 6px 22px}
+.chip:nth-child(4){background:var(--sky);top:350px;right:170px;animation-delay:-1s}
+@keyframes float{50%{transform:translateY(-14px) rotate(1.5deg)}}
+@media(max-width:1000px){.chips{display:none}}
+/* steps */
+.sec-t{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:12px}
+.sec-s{color:var(--muted);max-width:50ch;margin:0 0 44px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.step{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px 24px;transition:transform .25s}
+.step:hover{transform:translateY(-6px) rotate(-.6deg)}
+.step .n{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:800 1.2rem "Bricolage Grotesque",sans-serif;color:#14141a;margin-bottom:18px}
+.step:nth-child(1) .n{background:var(--acc)}.step:nth-child(2) .n{background:var(--violet)}.step:nth-child(3) .n{background:var(--sky)}.step:nth-child(4) .n{background:var(--coral)}
+.step h3{font-size:1.6rem;margin-bottom:8px}
+.step p{margin:0;color:var(--muted);font-size:.96rem}
+@media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+/* cases */
+.cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:26px;display:flex;flex-direction:column;gap:14px;transition:transform .25s,box-shadow .25s}
+.case:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.1)}
+.st{align-self:flex-start;padding:6px 14px;border-radius:999px;font-size:.82rem;font-weight:600;color:#14141a;display:flex;align-items:center;gap:7px}
+.st::before{content:"";width:8px;height:8px;border-radius:50%;background:#14141a}
+.s-ok{background:var(--acc)}.s-ver{background:var(--violet)}.s-con{background:var(--sky)}.s-urm{background:var(--coral)}
+.case h3{font-size:1.35rem;line-height:1.15}
+.case p{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--text);border-radius:9px;transition:width 1.2s .3s cubic-bezier(.2,.8,.2,1);width:0}
+.in .bar span{width:var(--w)}
+.meta{font-size:.82rem;color:var(--muted)}
+.note{font-size:.85rem;color:var(--muted);margin-top:22px}
+/* dark */
+.dark{background:var(--ink);color:#f4f2ee;border-radius:44px;margin:0 12px}
+.dark .sec-s{color:#a3a3b0}
+.indep{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.pts{display:grid;gap:14px}
+.pt{background:#1b1b23;border:1px solid #2a2a35;border-radius:24px;padding:22px 24px;display:flex;gap:16px;transition:transform .25s,border-color .25s}
+.pt:hover{transform:translateX(6px);border-color:var(--acc)}
+.pt b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem;display:block;margin-bottom:2px}
+.pt span.e{font-size:1.5rem}
+.pt p{margin:0;color:#a3a3b0;font-size:.95rem}
+@media(max-width:850px){.indep{grid-template-columns:1fr}}
+/* form */
+.form{background:var(--acc);color:#14141a;border-radius:36px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.form h2{font-size:clamp(2rem,5vw,3rem);font-weight:800}
+.form p{margin:14px 0 0}
+.form form{display:grid;gap:12px}
+.form input,.form textarea,.form select{width:100%;padding:15px 18px;border-radius:18px;border:2px solid transparent;background:#fff;font:inherit;color:#14141a}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:#14141a}
+.form textarea{min-height:110px;resize:vertical}
+.form .btn{background:#14141a;color:#fff;justify-content:center}
+.ok{display:none;font-weight:600}
+@media(max-width:850px){.form{grid-template-columns:1fr;padding:28px}}
+/* footer */
+footer{padding:60px 0 40px}
+.fgrid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{padding:10px 18px;border:1px solid var(--line);background:var(--card);border-radius:999px;text-decoration:none;font-weight:500;font-size:.95rem;transition:background .2s,color .2s}
+.soc a:hover{background:var(--acc);color:#14141a}
+.small{color:var(--muted);font-size:.88rem;margin-top:34px}
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.bar span{width:var(--w)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#"><i>“</i>VNE</a>
+<nav><a class="l" href="#cum">Cum merge</a><a class="l" href="#cazuri">Cazuri</a><a class="l" href="#independenti">Despre noi</a><a class="btn btn-main btn-sm" href="#sesizare" style="box-shadow:0 3px 0 rgba(0,0,0,.85)">Trimite o sesizare</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+<div class="tag"><b>●</b> Făcut de elevi, pentru elevi</div>
+<h1>Hai să fim <mark>auziți</mark>, nu doar ascultați.</h1>
+<p class="lead">Ai o problemă la școală și nu știi cui s-o spui? Ne-o trimiți, o verificăm, vorbim cu cine trebuie și nu te lăsăm până nu primești un răspuns.</p>
+<div class="cta"><a class="btn btn-main" href="#sesizare">Trimite o sesizare →</a><a class="btn btn-ghost" href="#cazuri">Vezi cazurile</a></div>
+<div class="chips" aria-hidden="true"><div class="chip">„Nu mai e voie la telefon deloc?”</div><div class="chip">„Căldura e pe 12°C în clasă”</div><div class="chip">„Nota nu s-a trecut în catalog”</div><div class="chip">„Nimeni nu ne-a răspuns”</div></div>
+</div></section>
+
+<section id="cum"><div class="wrap">
+<h2 class="sec-t rv">Cum ajunge problema ta la un răspuns</h2>
+<p class="sec-s rv">Patru pași, fără formulare de 5 pagini și fără limbaj de birou.</p>
+<div class="steps">
+<div class="step rv"><div class="n">1</div><h3>Trimite</h3><p>Ne scrii ce s-a întâmplat, în cuvintele tale. Poți rămâne anonim dacă vrei.</p></div>
+<div class="step rv"><div class="n">2</div><h3>Verificăm</h3><p>Citim tot, cerem detalii dacă e nevoie și ne asigurăm că ce ne spui se poate susține.</p></div>
+<div class="step rv"><div class="n">3</div><h3>Contactăm</h3><p>Când e cazul, scriem sau sunăm școala ori instituția potrivită, cu numele tău ținut doar la noi.</p></div>
+<div class="step rv"><div class="n">4</div><h3>Urmărim</h3><p>Nu e „am trimis un mail și gata”. Revenim până există un răspuns sau o rezolvare.</p></div>
+</div></div></section>
+
+<section id="cazuri" style="padding-top:20px"><div class="wrap">
+<h2 class="sec-t rv">Cazuri recente</h2>
+<p class="sec-s rv">Vezi unde au ajuns sesizările. Totul e anonimizat.</p>
+<div class="cases">
+<article class="case rv"><span class="st s-ok">Rezolvat</span><h3>Încălzirea a revenit în clasele de la etajul 2</h3><p>După două săptămâni de frig, școala a reparat centrala după ce am trimis sesizarea către inspectorat.</p><div class="bar"><span style="--w:100%"></span></div><div class="meta">Liceu · Moldova · 14 zile</div></article>
+<article class="case rv"><span class="st s-con">Am contactat școala</span><h3>Reguli diferite la fiecare profesor pentru telefoane</h3><p>Elevii nu știu ce e voie și ce nu. Am cerut conducerii un regulament scris, clar pentru toți.</p><div class="bar"><span style="--w:60%"></span></div><div class="meta">Gimnaziu · Muntenia · Ziua 6</div></article>
+<article class="case rv"><span class="st s-ver">În verificare</span><h3>Note care nu apar în catalog săptămâni întregi</h3><p>Mai multe clase raportează aceeași situație. Strângem detalii înainte să scriem școlii.</p><div class="bar"><span style="--w:30%"></span></div><div class="meta">Liceu · Transilvania · Ziua 2</div></article>
+<article class="case rv"><span class="st s-urm">Urmărim</span><h3>Cantina rămâne fără meniu pentru elevii cu alergii</h3><p>Școala a răspuns și a promis o schimbare. Verificăm dacă se și întâmplă.</p><div class="bar"><span style="--w:85%"></span></div><div class="meta">Gimnaziu · Dobrogea · Ziua 21</div></article>
+</div>
+<p class="note">Cazurile de mai sus sunt exemple ilustrative.</p>
+</div></section>
+
+<section id="independenti" class="dark"><div class="wrap indep">
+<div><h2 class="sec-t rv">Nu suntem consiliul elevilor. Și e bine așa.</h2>
+<p class="sec-s rv" style="margin:0">VNE e independent. Nu depindem de conducerea școlii, nu cerem voie pentru ce publicăm și nu suntem legați de niciun consiliu. Singura noastră treabă e să fim de partea elevilor.</p></div>
+<div class="pts">
+<div class="pt rv"><span class="e">🔒</span><div><b>Identitatea ta rămâne la noi</b><p>Nu spunem numele tău nimănui fără acordul tău.</p></div></div>
+<div class="pt rv"><span class="e">🧭</span><div><b>Fără presiuni din interior</b><p>Nu răspundem în fața directorilor sau a profesorilor.</p></div></div>
+<div class="pt rv"><span class="e">🤝</span><div><b>Lucrăm cu oricine vrea să rezolve</b><p>Colaborăm cu consiliile și cu școlile când ajută, dar nu depindem de ele.</p></div></div>
+</div></div></section>
+
+<section id="sesizare"><div class="wrap"><div class="form rv">
+<div><h2>Ce te-a deranjat la școală?</h2><p>Scrie-ne pe scurt. Nu trebuie să fie perfect formulat, important e să ne spui ce s-a întâmplat.</p></div>
+<form id="f">
+<select aria-label="Tip problemă"><option>Despre ce e vorba?</option><option>Note / evaluare</option><option>Reguli și disciplină</option><option>Clădire și condiții</option><option>Comportament al unui adult</option><option>Altceva</option></select>
+<textarea aria-label="Povestea ta" placeholder="Povestește-ne ce s-a întâmplat…" required></textarea>
+<input type="email" aria-label="Email" placeholder="Email (opțional, doar ca să te putem anunța)">
+<button class="btn" type="submit">Trimite sesizarea</button>
+<div class="ok" id="ok">Mulțumim! Am primit mesajul și revenim la tine curând. 💚</div>
+</form></div></div></section>
+</main>
+
+<footer><div class="wrap"><div class="fgrid">
+<div><a class="logo" href="#"><i>“</i>VNE</a><p style="color:var(--muted);margin:10px 0 0;max-width:30ch">Vocea Națională a Elevilor. Finalmente, cineva care chiar ascultă.</p></div>
+<div><b>Găsește-ne</b><div class="soc" style="margin-top:12px"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Discord</a><a href="#">YouTube</a></div><p style="margin:16px 0 0">Scrie-ne la <a href="mailto:salut@vne.ro"><b>salut@vne.ro</b></a></p></div>
+</div><p class="small">© 2026 VNE. Inițiativă independentă de elevi.</p></div></footer>
+
+<script>
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('ok').style.display='block';e.target.reset()});
+</script>
+</body>
+</html>
